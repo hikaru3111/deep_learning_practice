@@ -11,6 +11,12 @@ def sigmoid(x):
 def relu(x):
     return np.maximum(x,0)
 
+def softmax(a):
+    c = np.max(a)
+    exp_a = np.exp(a - c) #for prevending overflow
+    exp_sum_a = np.sum(exp_a)
+    y = exp_a / exp_sum_a
+    return y
 #test
 #st_x = np.arange(-5.0,5.0,0.1)
 #st_y = step_function(st_x)
